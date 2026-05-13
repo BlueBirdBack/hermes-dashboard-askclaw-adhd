@@ -2,7 +2,7 @@
 # (before the KB browse tab added extra sidebar chrome).
 name: askclaw-adhd
 label: AskClaw ADHD
-description: Pre-KB AskClaw chat style with MQTT-inspired calm blue surfaces, system font, compact clean chrome.
+description: Pre-KB AskClaw chat style with MQTT-inspired calm blue surfaces, rectangular chrome, and system font.
 
 palette:
   background:
@@ -25,7 +25,7 @@ typography:
   letterSpacing: "0"
 
 layout:
-  radius: "0.5rem"
+  radius: "0"
   density: comfortable
 
 layoutVariant: standard
@@ -80,6 +80,9 @@ customCSS: |
     --askclaw-accent2: #214f85;
     --askclaw-border: #d6e0eb;
     --askclaw-input-bg: #ffffff;
+    --askclaw-radius: 0;
+    --theme-radius: 0 !important;
+    --radius: 0 !important;
     --askclaw-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
 
@@ -149,7 +152,7 @@ customCSS: |
     background: var(--askclaw-input-bg) !important;
     border-color: var(--askclaw-border) !important;
     color: var(--askclaw-text) !important;
-    border-radius: 0.75rem !important;
+    border-radius: var(--askclaw-radius) !important;
   }
 
   input:focus,
@@ -176,8 +179,18 @@ customCSS: |
   }
 
   button,
+  a,
   [role="button"] {
-    border-radius: 0.5rem;
+    border-radius: var(--askclaw-radius) !important;
+  }
+
+  [class*="rounded"],
+  [class*="radius"],
+  [class*="hermes-kanban"],
+  [data-slot="card"],
+  [data-slot="button"],
+  [data-slot="badge"] {
+    border-radius: var(--askclaw-radius) !important;
   }
 
   .border,

@@ -8,6 +8,7 @@ Features:
 
 - low-distraction, clean, good for long dashboard sessions
 - MQTT-inspired calm blue surfaces with a blue accent
+- rectangular corners, no rounded chrome
 - system fonts, no decorative display font
 - based on the AskClaw chat UI before commit `7843bbd`, blended with the MQTT Monitor blue palette
 
