@@ -6,10 +6,10 @@ description: Pre-KB AskClaw chat style — ADHD-friendly neutral surfaces, blue 
 
 palette:
   background:
-    hex: "#ffffff"
+    hex: "#f7fbff"
     alpha: 1
   midground:
-    hex: "#1a1a1a"
+    hex: "#172033"
     alpha: 1
   foreground:
     hex: "#2563eb"
@@ -31,54 +31,54 @@ layout:
 layoutVariant: standard
 
 colorOverrides:
-  card: "#ffffff"
-  cardForeground: "#1a1a1a"
-  popover: "#ffffff"
-  popoverForeground: "#1a1a1a"
+  card: "#fbfdff"
+  cardForeground: "#172033"
+  popover: "#fbfdff"
+  popoverForeground: "#172033"
   primary: "#2563eb"
   primaryForeground: "#ffffff"
-  secondary: "#f5f5f5"
-  secondaryForeground: "#1a1a1a"
-  muted: "#f5f5f5"
-  mutedForeground: "#555555"
-  accent: "#e8e8e8"
-  accentForeground: "#1a1a1a"
+  secondary: "#f3f7fb"
+  secondaryForeground: "#172033"
+  muted: "#f3f7fb"
+  mutedForeground: "#4f5f73"
+  accent: "#e5edf5"
+  accentForeground: "#172033"
   destructive: "#e53e3e"
   destructiveForeground: "#ffffff"
   success: "#16a34a"
   warning: "#d97706"
-  border: "#e0e0e0"
-  input: "#e0e0e0"
+  border: "#dbe5ef"
+  input: "#dbe5ef"
   ring: "#2563eb"
 
 componentStyles:
   card:
-    background: "#ffffff"
+    background: "#fbfdff"
     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.08)"
   header:
-    background: "#ffffff"
+    background: "#fbfdff"
   sidebar:
-    background: "#f8f8f8"
+    background: "#f3f7fb"
   tab:
     background: "transparent"
   page:
-    background: "#ffffff"
+    background: "#fbfdff"
 
 customCSS: |
   :root {
     --font-mondwest: var(--theme-font-sans) !important;
     --font-expanded: var(--theme-font-sans) !important;
     --font-courier: var(--theme-font-mono) !important;
-    --askclaw-bg: #ffffff;
-    --askclaw-bg2: #f5f5f5;
-    --askclaw-bg3: #e8e8e8;
-    --askclaw-text: #1a1a1a;
-    --askclaw-text2: #555555;
-    --askclaw-text3: #888888;
+    --askclaw-bg: #f7fbff;
+    --askclaw-bg2: #f3f7fb;
+    --askclaw-bg3: #e5edf5;
+    --askclaw-text: #172033;
+    --askclaw-text2: #4f5f73;
+    --askclaw-text3: #6f7f92;
     --askclaw-accent: #2563eb;
     --askclaw-accent2: #1d4ed8;
-    --askclaw-border: #e0e0e0;
-    --askclaw-input-bg: #ffffff;
+    --askclaw-border: #dbe5ef;
+    --askclaw-input-bg: #fbfdff;
     --askclaw-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
 

@@ -7,7 +7,7 @@ A light theme for the **Hermes Agent Web Dashboard**.
 Features:
 
 - low-distraction, clean, good for long dashboard sessions
-- blue accent color
+- cool blue-gray surfaces with a blue accent
 - system fonts, no decorative display font
 - colors come from the AskClaw chat UI before commit `7843bbd`
 
