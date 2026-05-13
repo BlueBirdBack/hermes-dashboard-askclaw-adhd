@@ -1,0 +1,639 @@
+# Signal Sky is a Hermes Agent Dashboard theme.
+# It emphasizes signal over noise: calm blue surfaces, rectangular chrome, and clear operational hierarchy.
+name: signal-sky
+label: Signal Sky
+description: Hermes Agent Dashboard theme with calm Signal Sky surfaces, rectangular chrome, and clear operational hierarchy.
+
+palette:
+  background:
+    hex: "#eef8ff"
+    alpha: 1
+  midground:
+    hex: "#102447"
+    alpha: 1
+  foreground:
+    hex: "#1f5fbf"
+    alpha: 0.12
+  warmGlow: "rgba(31, 95, 191, 0.08)"
+  noiseOpacity: 0.08
+
+typography:
+  fontSans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  fontMono: "'SF Mono', Monaco, Consolas, ui-monospace, monospace"
+  baseSize: "15px"
+  lineHeight: "1.55"
+  letterSpacing: "0"
+
+layout:
+  radius: "0"
+  density: comfortable
+
+layoutVariant: standard
+
+colorOverrides:
+  card: "#fbfdff"
+  cardForeground: "#102447"
+  popover: "#fbfdff"
+  popoverForeground: "#102447"
+  primary: "#1f5fbf"
+  primaryForeground: "#ffffff"
+  secondary: "#edf6ff"
+  secondaryForeground: "#102447"
+  muted: "#edf6ff"
+  mutedForeground: "#506886"
+  accent: "#dbeafe"
+  accentForeground: "#102447"
+  destructive: "#e53e3e"
+  destructiveForeground: "#ffffff"
+  success: "#16a34a"
+  warning: "#d97706"
+  border: "#c4d9f0"
+  input: "#c4d9f0"
+  ring: "#1f5fbf"
+
+componentStyles:
+  card:
+    background: "#fbfdff"
+    boxShadow: "0 1px 0 rgba(255, 255, 255, 0.90) inset, 0 18px 40px rgba(16, 36, 71, 0.08)"
+  header:
+    background: "#fbfdff"
+  sidebar:
+    background: "#d9e8f7"
+  tab:
+    background: "transparent"
+  page:
+    background: "#eef8ff"
+
+customCSS: |
+  :root {
+    --font-mondwest: var(--theme-font-sans) !important;
+    --font-expanded: var(--theme-font-sans) !important;
+    --font-courier: var(--theme-font-mono) !important;
+    --signal-bg: #eef8ff;
+    --signal-card: #fbfdff;
+    --signal-bg2: #edf6ff;
+    --signal-bg3: #dbeafe;
+    --signal-text: #102447;
+    --signal-text2: #506886;
+    --signal-text3: #6f8199;
+    --signal-accent: #1f5fbf;
+    --signal-accent2: #184a9a;
+    --signal-cyan: #38d5e8;
+    --signal-border: #c4d9f0;
+    --signal-sidebar: #d9e8f7;
+    --signal-sidebar-active: #b9d6f2;
+    --signal-sidebar-border: #9fbfe0;
+    --signal-grid: rgba(31, 95, 191, 0.032);
+    --signal-grid-strong: rgba(31, 95, 191, 0.058);
+    --signal-glow-cyan: rgba(56, 213, 232, 0.14);
+    --signal-glow-blue: rgba(31, 95, 191, 0.08);
+    --signal-input-bg: #fbfdff;
+    --signal-command-bg: #eaf5ff;
+    --signal-command-hover: #d9ecff;
+    --signal-command-border: #9fc7ee;
+    --signal-command-hover-border: #5aa4e8;
+    --signal-command-text: #164a8c;
+    --signal-radius: 0;
+    --theme-radius: 0 !important;
+    --radius: 0 !important;
+    --signal-shadow: 0 1px 0 rgba(255, 255, 255, 0.90) inset, 0 18px 40px rgba(16, 36, 71, 0.08);
+  }
+
+  body {
+    background:
+      radial-gradient(780px 360px at 80% -8%, var(--signal-glow-cyan), transparent 64%),
+      radial-gradient(700px 460px at 18% -6%, var(--signal-glow-blue), transparent 62%),
+      linear-gradient(180deg, #f8fcff 0%, var(--signal-bg) 46%, #edf7ff 100%) !important;
+    color: var(--signal-text) !important;
+    text-transform: none !important;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--signal-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--signal-grid) 1px, transparent 1px),
+      linear-gradient(var(--signal-grid-strong) 1px, transparent 1px),
+      linear-gradient(90deg, var(--signal-grid-strong) 1px, transparent 1px);
+    background-size: 44px 44px, 44px 44px, 176px 176px, 176px 176px;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 86%, transparent 100%);
+    opacity: 0.38;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  #root > div,
+  .uppercase,
+  [class*="uppercase"] {
+    text-transform: none !important;
+  }
+
+  .font-mondwest,
+  [class*="font-mondwest"],
+  .font-expanded,
+  [class*="font-expanded"] {
+    font-family: var(--theme-font-sans) !important;
+    letter-spacing: 0 !important;
+  }
+
+  .font-mono,
+  [class*="font-mono"] {
+    font-family: var(--theme-font-mono) !important;
+  }
+
+  [style*="plus-lighter"] {
+    mix-blend-mode: normal !important;
+  }
+
+  #app-sidebar {
+    position: relative;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.10) 22%, transparent 58%),
+      linear-gradient(180deg, #d4e8fa 0%, var(--signal-sidebar) 46%, #c9def2 100%) !important;
+    border-color: var(--signal-sidebar-border) !important;
+    color: var(--signal-text) !important;
+    box-shadow:
+      inset -1px 0 0 rgba(255, 255, 255, 0.70),
+      18px 0 46px rgba(16, 36, 71, 0.075) !important;
+  }
+
+  aside:has(nav[aria-label="Navigation"]),
+  aside[aria-label="Navigation"] {
+    position: relative;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.10) 22%, transparent 58%),
+      linear-gradient(180deg, #d4e8fa 0%, var(--signal-sidebar) 46%, #c9def2 100%) !important;
+    border-right-color: var(--signal-sidebar-border) !important;
+    color: var(--signal-text) !important;
+    box-shadow:
+      inset -1px 0 0 rgba(255, 255, 255, 0.70),
+      18px 0 46px rgba(16, 36, 71, 0.075) !important;
+  }
+
+  aside:has(nav[aria-label="Navigation"])::before,
+  aside[aria-label="Navigation"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(56, 213, 232, 0.76) 14%, rgba(31, 95, 191, 0.48) 52%, transparent 100%);
+    pointer-events: none;
+  }
+
+  aside:has(nav[aria-label="Navigation"])::after,
+  aside[aria-label="Navigation"]::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, rgba(56, 213, 232, 0.76), rgba(31, 95, 191, 0.42) 34%, transparent 74%);
+    opacity: 0.72;
+    pointer-events: none;
+  }
+
+  #app-sidebar a,
+  #app-sidebar button,
+  aside a,
+  aside button {
+    font-size: 0.875rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  aside .opacity-60,
+  aside [class*="opacity-60"] {
+    opacity: 0.88 !important;
+  }
+
+  aside .opacity-30,
+  aside [class*="opacity-30"] {
+    opacity: 0.62 !important;
+  }
+
+  aside [class*="leading-0"] {
+    line-height: 1.02 !important;
+  }
+
+  aside > div:first-child {
+    position: relative;
+    min-height: 4.45rem !important;
+    padding: 0.55rem 1rem !important;
+    background:
+      linear-gradient(180deg, rgba(251, 253, 255, 0.62), rgba(219, 234, 254, 0.25)) !important;
+    border-bottom-color: rgba(159, 191, 224, 0.78) !important;
+    box-shadow:
+      inset 0 -1px 0 rgba(255, 255, 255, 0.58),
+      0 8px 22px rgba(16, 36, 71, 0.045) !important;
+  }
+
+  aside > div:first-child [class*="leading"] {
+    line-height: 1.22 !important;
+  }
+
+  aside > div:first-child::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--signal-cyan), rgba(31, 95, 191, 0.54), transparent 78%);
+    opacity: 0.72;
+  }
+
+  aside nav {
+    position: relative;
+    padding: 0.45rem 0.55rem 0.55rem !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(31, 95, 191, 0.28) transparent;
+  }
+
+  aside nav::after {
+    content: "";
+    position: sticky;
+    display: block;
+    bottom: -0.55rem;
+    height: 1.1rem;
+    margin-top: -1.1rem;
+    background: linear-gradient(180deg, transparent, rgba(217, 232, 247, 0.92));
+    pointer-events: none;
+  }
+
+  aside nav li:nth-child(2),
+  aside nav li:nth-child(7),
+  aside nav li:nth-child(10) {
+    margin-bottom: 0.12rem !important;
+    padding-bottom: 0.12rem !important;
+    border-bottom: 1px solid rgba(159, 191, 224, 0.42) !important;
+  }
+
+  aside nav div[class*="border-t"] {
+    margin-top: 0.12rem !important;
+    padding-bottom: 0.20rem !important;
+    border-top-color: rgba(159, 191, 224, 0.42) !important;
+  }
+
+  aside nav div[class*="border-t"] > span {
+    padding: 0.22rem 0.62rem 0.12rem !important;
+    font-size: 0.58rem !important;
+    line-height: 1 !important;
+    opacity: 0.52 !important;
+  }
+
+  aside nav a {
+    margin: 0.035rem 0 !important;
+    padding: 0.22rem 0.62rem !important;
+    width: auto !important;
+    min-height: 1.48rem !important;
+    line-height: 1.16 !important;
+    border: 1px solid transparent !important;
+    color: #244465 !important;
+    opacity: 0.90 !important;
+    background: transparent !important;
+    transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease !important;
+  }
+
+  aside nav a:hover {
+    background: rgba(234, 245, 255, 0.72) !important;
+    border-color: rgba(159, 199, 238, 0.70) !important;
+    color: var(--signal-text) !important;
+    box-shadow:
+      inset 2px 0 0 rgba(56, 213, 232, 0.48),
+      inset 0 1px 0 rgba(255, 255, 255, 0.70) !important;
+    opacity: 1 !important;
+  }
+
+  #app-sidebar a[aria-current="page"],
+  #app-sidebar a[data-active="true"],
+  #app-sidebar a[href$="/kanban"],
+  aside a[aria-current="page"],
+  aside a[data-active="true"],
+  aside a[href$="/kanban"] {
+    background:
+      linear-gradient(90deg, rgba(31, 95, 191, 0.24), rgba(185, 214, 242, 0.84) 64%, rgba(234, 245, 255, 0.46)) !important;
+    background-color: #c9def5 !important;
+    border-color: rgba(31, 95, 191, 0.28) !important;
+    color: var(--signal-text) !important;
+    opacity: 1 !important;
+    box-shadow:
+      inset 3px 0 0 var(--signal-accent),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.42),
+      0 8px 20px rgba(16, 36, 71, 0.055) !important;
+  }
+
+  aside > div:nth-child(3) {
+    margin: 0.32rem 0.65rem !important;
+    padding: 0.40rem !important;
+    border: 1px solid rgba(159, 191, 224, 0.68) !important;
+    background:
+      linear-gradient(180deg, rgba(251, 253, 255, 0.56), rgba(219, 234, 254, 0.34)) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.64),
+      0 8px 20px rgba(16, 36, 71, 0.04) !important;
+  }
+
+  aside > div:nth-child(3) a {
+    position: relative;
+    margin: 0.14rem 0 0.18rem !important;
+    padding: 0.22rem 0.45rem 0.22rem 1rem !important;
+    border: 1px solid rgba(159, 199, 238, 0.54) !important;
+    background: rgba(234, 245, 255, 0.62) !important;
+    color: #385777 !important;
+    line-height: 1.18 !important;
+  }
+
+  aside > div:nth-child(3) p {
+    margin: 0 !important;
+    line-height: 1.18 !important;
+  }
+
+  aside > div:nth-child(3) a::before {
+    content: "";
+    position: absolute;
+    left: 0.48rem;
+    top: 0.42rem;
+    width: 0.38rem;
+    height: 0.38rem;
+    background: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12), 0 0 12px rgba(22, 163, 74, 0.26);
+  }
+
+  aside > div:nth-child(3) button {
+    margin: 0.08rem 0 !important;
+    padding: 0.18rem 0.45rem !important;
+    width: 100% !important;
+    min-height: 1.38rem !important;
+    gap: 0.45rem !important;
+    font-size: 0.72rem !important;
+    line-height: 1.08 !important;
+    border: 1px solid rgba(159, 199, 238, 0.52) !important;
+    background: rgba(234, 245, 255, 0.42) !important;
+    color: #395879 !important;
+  }
+
+  aside > div:nth-child(3) li {
+    line-height: 1 !important;
+  }
+
+  aside > div:nth-child(4) {
+    border-top-color: rgba(159, 191, 224, 0.72) !important;
+    background: rgba(234, 245, 255, 0.38) !important;
+  }
+
+  aside > div:nth-child(4) button {
+    border: 1px solid rgba(159, 199, 238, 0.56) !important;
+    background: rgba(251, 253, 255, 0.50) !important;
+    color: #385777 !important;
+  }
+
+  aside > div:nth-child(5) {
+    border-top-color: rgba(159, 191, 224, 0.64) !important;
+    background: rgba(201, 222, 242, 0.30) !important;
+  }
+
+  aside > div:nth-child(5) span:first-child {
+    font-family: var(--theme-font-mono) !important;
+    color: #506886 !important;
+  }
+
+  #app-sidebar a.opacity-60 {
+    opacity: 0.90 !important;
+  }
+
+  #app-sidebar .opacity-30 {
+    opacity: 0.58 !important;
+  }
+
+  ::selection {
+    background: rgba(31, 95, 191, 0.22);
+    color: var(--signal-text);
+  }
+
+  header,
+  footer {
+    background: var(--signal-bg) !important;
+    border-color: var(--signal-border) !important;
+    box-shadow: none !important;
+  }
+
+  header::after,
+  [role="banner"]::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-top: 0.35rem;
+    background: linear-gradient(90deg, transparent 0%, rgba(56, 213, 232, 0.68) 16%, rgba(31, 95, 191, 0.42) 48%, transparent 100%);
+  }
+
+  input,
+  textarea,
+  select,
+  [role="combobox"] {
+    background: var(--signal-input-bg) !important;
+    border-color: var(--signal-border) !important;
+    color: var(--signal-text) !important;
+    border-radius: var(--signal-radius) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.90),
+      0 1px 0 rgba(16, 36, 71, 0.03) !important;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  [role="combobox"]:focus {
+    border-color: var(--signal-accent) !important;
+    box-shadow: 0 0 0 2px rgba(31, 95, 191, 0.12) !important;
+  }
+
+  [class*="bg-card"] {
+    background: var(--signal-card) !important;
+    border-color: var(--signal-border) !important;
+    box-shadow: var(--signal-shadow) !important;
+  }
+
+  main [class*="border"],
+  main [class*="bg-card"],
+  main [class*="bg-background"] {
+    border-color: var(--signal-border) !important;
+  }
+
+  main [class*="bg-background"],
+  main [class*="bg-card"] {
+    backdrop-filter: saturate(125%) blur(1px);
+  }
+
+  main button:not([role="combobox"]) {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, #f6fbff 0%, var(--signal-command-bg) 100%) !important;
+    border: 1px solid var(--signal-command-border) !important;
+    color: var(--signal-command-text) !important;
+    box-shadow:
+      inset 2px 0 0 rgba(56, 213, 232, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      0 5px 14px rgba(31, 95, 191, 0.075) !important;
+  }
+
+  main button:not([role="combobox"]):hover {
+    background:
+      linear-gradient(180deg, #eef8ff 0%, var(--signal-command-hover) 100%) !important;
+    border-color: var(--signal-command-hover-border) !important;
+    color: #123f78 !important;
+    box-shadow:
+      inset 2px 0 0 var(--signal-cyan),
+      inset 0 1px 0 rgba(255, 255, 255, 0.94),
+      0 7px 18px rgba(31, 95, 191, 0.105) !important;
+  }
+
+  main button:not([role="combobox"])[aria-pressed="true"],
+  main button:not([role="combobox"])[aria-selected="true"],
+  main button:not([role="combobox"])[data-state="active"] {
+    background:
+      linear-gradient(180deg, #2b72d2 0%, var(--signal-accent) 100%) !important;
+    border-color: var(--signal-accent2) !important;
+    color: #ffffff !important;
+    box-shadow:
+      inset 2px 0 0 rgba(56, 213, 232, 0.72),
+      inset 0 1px 0 rgba(255, 255, 255, 0.24),
+      0 8px 20px rgba(31, 95, 191, 0.18) !important;
+  }
+
+  .hermes-kanban-column {
+    position: relative;
+    overflow: hidden;
+    background: rgba(251, 253, 255, 0.92) !important;
+    border-color: #b9d2ee !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      0 14px 34px rgba(16, 36, 71, 0.065) !important;
+  }
+
+  .hermes-kanban-column::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--signal-cyan), var(--signal-accent), transparent 72%);
+    opacity: 0.42;
+    pointer-events: none;
+  }
+
+  .hermes-kanban-column-sub,
+  .hermes-kanban-empty,
+  .hermes-kanban-column-count {
+    color: #425b7d !important;
+  }
+
+  .hermes-kanban-column-count {
+    background: rgba(219, 234, 254, 0.72) !important;
+    border: 1px solid #b9d2ee !important;
+    padding: 0.05rem 0.35rem !important;
+  }
+
+  .hermes-kanban-column-add,
+  .hermes-kanban-docs-link {
+    background: rgba(219, 234, 254, 0.68) !important;
+    border: 1px solid #b9d2ee !important;
+    color: var(--signal-accent) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.72),
+      0 3px 10px rgba(31, 95, 191, 0.08) !important;
+  }
+
+  .hermes-kanban-empty {
+    background: linear-gradient(135deg, rgba(251, 253, 255, 0.86), rgba(219, 234, 254, 0.46)) !important;
+    border-color: #b9d2ee !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.70) !important;
+  }
+
+
+  .hermes-kanban-col-check {
+    accent-color: var(--signal-accent) !important;
+    border-color: #8fb5dc !important;
+  }
+
+  [class*="bg-muted"],
+  [class*="bg-secondary"] {
+    background: var(--signal-bg2) !important;
+  }
+
+  [class*="text-muted"] {
+    color: var(--signal-text2) !important;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    border-radius: var(--signal-radius) !important;
+  }
+
+  [class*="rounded"],
+  [class*="radius"],
+  [class*="hermes-kanban"],
+  [data-slot="card"],
+  [data-slot="button"],
+  [data-slot="badge"] {
+    border-radius: var(--signal-radius) !important;
+  }
+
+  .border,
+  [class*="border-border"] {
+    border-color: var(--signal-border) !important;
+  }
+
+  code,
+  pre {
+    background: var(--signal-bg2) !important;
+    border-color: var(--signal-border) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --signal-bg: #0d0d0d;
+      --signal-card: #1e1e1e;
+      --signal-bg2: #1a1a1a;
+      --signal-bg3: #2a2a2a;
+      --signal-text: #e0e0e0;
+      --signal-text2: #aaaaaa;
+      --signal-text3: #666666;
+      --signal-accent: #3b82f6;
+      --signal-accent2: #60a5fa;
+      --signal-border: #333333;
+      --signal-input-bg: #1a1a1a;
+      --signal-shadow: 0 1px 3px rgba(0, 0, 0, 0.30);
+
+      --color-background: #0d0d0d;
+      --color-foreground: #e0e0e0;
+      --color-card: #1e1e1e;
+      --color-card-foreground: #e0e0e0;
+      --color-popover: #1a1a1a;
+      --color-popover-foreground: #e0e0e0;
+      --color-primary: #3b82f6;
+      --color-primary-foreground: #ffffff;
+      --color-secondary: #1a1a1a;
+      --color-secondary-foreground: #e0e0e0;
+      --color-muted: #1a1a1a;
+      --color-muted-foreground: #aaaaaa;
+      --color-accent: #2a2a2a;
+      --color-accent-foreground: #e0e0e0;
+      --color-border: #333333;
+      --color-input: #333333;
+      --color-ring: #3b82f6;
+    }
+
+    [class*="bg-card"] {
+      background: #1e1e1e !important;
+    }
+  }
+
