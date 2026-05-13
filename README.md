@@ -6,6 +6,10 @@
 
 **Signal Sky** 的核心是：signal over noise。它用冷静蓝色、矩形控制台 chrome、低干扰层级，把 dashboard 做成清晰的 agent ops / mission control 工作台。
 
+## 预览
+
+![Signal Sky 中文界面预览](assets/signal-sky-zh.jpg)
+
 特点：
 
 - 低干扰、清爽，适合长时间看 dashboard

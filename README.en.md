@@ -6,6 +6,10 @@ A light theme for the **Hermes Agent Web Dashboard**.
 
 **Signal Sky** is built around signal over noise: calm blue surfaces, rectangular console chrome, and low-distraction hierarchy for an agent ops / mission-control dashboard.
 
+## Preview
+
+![Signal Sky English interface preview](assets/signal-sky-en.jpg)
+
 Features:
 
 - low-distraction and clean for long dashboard sessions
