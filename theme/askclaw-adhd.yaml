@@ -1,20 +1,20 @@
-# AskClaw ADHD mirrors the AskClaw chat UI before commit 7843bbd
-# (before the KB browse tab added extra sidebar chrome).
+# AskClaw ADHD is a Hermes Agent Dashboard theme.
+# It uses the AskClaw pre-KB visual baseline with a Signal Sky blue palette.
 name: askclaw-adhd
 label: AskClaw ADHD
-description: Pre-KB AskClaw chat style with MQTT-inspired calm blue surfaces, rectangular chrome, and system font.
+description: Hermes Agent Dashboard theme with Signal Sky blue surfaces, rectangular chrome, and system font.
 
 palette:
   background:
-    hex: "#f2f7fc"
+    hex: "#eef8ff"
     alpha: 1
   midground:
-    hex: "#152033"
+    hex: "#102447"
     alpha: 1
   foreground:
-    hex: "#2e6eb5"
+    hex: "#1f5fbf"
     alpha: 0.12
-  warmGlow: "rgba(46, 110, 181, 0.08)"
+  warmGlow: "rgba(31, 95, 191, 0.08)"
   noiseOpacity: 0.08
 
 typography:
@@ -31,59 +31,60 @@ layout:
 layoutVariant: standard
 
 colorOverrides:
-  card: "#ffffff"
-  cardForeground: "#152033"
-  popover: "#ffffff"
-  popoverForeground: "#152033"
-  primary: "#2e6eb5"
+  card: "#fbfdff"
+  cardForeground: "#102447"
+  popover: "#fbfdff"
+  popoverForeground: "#102447"
+  primary: "#1f5fbf"
   primaryForeground: "#ffffff"
-  secondary: "#edf4fb"
-  secondaryForeground: "#152033"
-  muted: "#edf4fb"
-  mutedForeground: "#5a6d86"
-  accent: "#e3eef9"
-  accentForeground: "#152033"
+  secondary: "#edf6ff"
+  secondaryForeground: "#102447"
+  muted: "#edf6ff"
+  mutedForeground: "#506886"
+  accent: "#dbeafe"
+  accentForeground: "#102447"
   destructive: "#e53e3e"
   destructiveForeground: "#ffffff"
   success: "#16a34a"
   warning: "#d97706"
-  border: "#d6e0eb"
-  input: "#d6e0eb"
-  ring: "#2e6eb5"
+  border: "#c9def5"
+  input: "#c9def5"
+  ring: "#1f5fbf"
 
 componentStyles:
   card:
-    background: "#ffffff"
-    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.08)"
+    background: "#fbfdff"
+    boxShadow: "0 1px 3px rgba(16, 36, 71, 0.08)"
   header:
-    background: "#ffffff"
+    background: "#fbfdff"
   sidebar:
-    background: "#edf4fb"
+    background: "#edf6ff"
   tab:
     background: "transparent"
   page:
-    background: "#f2f7fc"
+    background: "#eef8ff"
 
 customCSS: |
   :root {
     --font-mondwest: var(--theme-font-sans) !important;
     --font-expanded: var(--theme-font-sans) !important;
     --font-courier: var(--theme-font-mono) !important;
-    --askclaw-bg: #f2f7fc;
-    --askclaw-card: #ffffff;
-    --askclaw-bg2: #edf4fb;
-    --askclaw-bg3: #e3eef9;
-    --askclaw-text: #152033;
-    --askclaw-text2: #5a6d86;
-    --askclaw-text3: #73849a;
-    --askclaw-accent: #2e6eb5;
-    --askclaw-accent2: #214f85;
-    --askclaw-border: #d6e0eb;
-    --askclaw-input-bg: #ffffff;
+    --askclaw-bg: #eef8ff;
+    --askclaw-card: #fbfdff;
+    --askclaw-bg2: #edf6ff;
+    --askclaw-bg3: #dbeafe;
+    --askclaw-text: #102447;
+    --askclaw-text2: #506886;
+    --askclaw-text3: #6f8199;
+    --askclaw-accent: #1f5fbf;
+    --askclaw-accent2: #184a9a;
+    --askclaw-cyan: #38d5e8;
+    --askclaw-border: #c9def5;
+    --askclaw-input-bg: #fbfdff;
     --askclaw-radius: 0;
     --theme-radius: 0 !important;
     --radius: 0 !important;
-    --askclaw-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --askclaw-shadow: 0 1px 3px rgba(16, 36, 71, 0.08);
   }
 
   body {
@@ -134,7 +135,7 @@ customCSS: |
   }
 
   ::selection {
-    background: rgba(46, 110, 181, 0.22);
+    background: rgba(31, 95, 191, 0.22);
     color: var(--askclaw-text);
   }
 
@@ -160,7 +161,7 @@ customCSS: |
   select:focus,
   [role="combobox"]:focus {
     border-color: var(--askclaw-accent) !important;
-    box-shadow: 0 0 0 2px rgba(46, 110, 181, 0.12) !important;
+    box-shadow: 0 0 0 2px rgba(31, 95, 191, 0.12) !important;
   }
 
   [class*="bg-card"] {

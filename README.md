@@ -7,10 +7,10 @@
 特点：
 
 - 低干扰、清爽、适合长时间看 dashboard
-- MQTT 风格的冷静蓝色浅色背景和蓝色强调色
+- Signal Sky 冷静蓝色浅色背景和蓝色强调色
 - 矩形边角，不使用圆角 chrome
 - 系统字体，不用花哨字体
-- 基于 AskClaw 在 `7843bbd` 之前的聊天界面，并融合 MQTT Monitor 的蓝色 palette
+- 专为 Hermes Agent Dashboard 调整，融合 QDH / Signal Sky 蓝色 palette
 
 ## 安装
 
